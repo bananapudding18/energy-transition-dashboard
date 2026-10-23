@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="lab:dashboard" content="dev-g00-energy-transition">
+<title>US Energy Transition | Investment Theme Monitor</title>
+<style>
+:root{color-scheme:light;--ink:#172b3a;--muted:#637580;--line:#dce5e8;--paper:#f3f7f6;--card:#fff;--navy:#14374a;--teal:#138b78;--sun:#edaa34;--sky:#4384c1;--coal:#52616d;--other:#9aa6a8;--shadow:0 14px 36px rgba(19,52,67,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1320px;margin:auto;padding:30px clamp(16px,4vw,52px) 60px}header{background:var(--navy);color:#f4f8f7;padding:34px clamp(18px,5vw,60px) 38px;border-radius:24px;position:relative;overflow:hidden}header:after{content:"";position:absolute;width:320px;height:320px;border:1px solid #ffffff20;border-radius:50%;right:-80px;top:-170px;box-shadow:0 0 0 34px #ffffff0b,0 0 0 70px #ffffff08}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:11px;font-weight:750;color:#9fd5cb;margin:0 0 10px}h1{font-size:clamp(30px,4vw,48px);line-height:1.07;letter-spacing:-.04em;max-width:740px;margin:0}header .question{font-size:17px;color:#cfdddf;max-width:780px;margin:16px 0 0}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;position:relative;z-index:1}.badge{border:1px solid #ffffff35;color:#d8e7e7;border-radius:99px;padding:7px 11px;font-size:11px;white-space:nowrap}.answer{margin:22px 0 0;max-width:900px;color:#f3f7f6;font-size:15px}.date-note{color:#aac2c6;font-size:13px;margin:8px 0 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin:34px 2px 13px}.section-head h2{font-size:20px;letter-spacing:-.02em;margin:0}.section-head p{color:var(--muted);font-size:13px;margin:3px 0 0}.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.kpi{padding:19px 20px;min-height:141px;position:relative}.kpi:before{content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;background:var(--teal);border-radius:0 4px 4px 0}.kpi:nth-child(2):before{background:var(--sun)}.kpi:nth-child(3):before{background:var(--sky)}.kpi:nth-child(4):before{background:var(--coal)}.kpi-label{color:var(--muted);font-size:12px;font-weight:650}.kpi-value{font-size:clamp(28px,3vw,37px);letter-spacing:-.045em;font-weight:750;margin:5px 0 2px;font-variant-numeric:tabular-nums}.kpi-unit{font-size:12px;color:var(--muted)}.controls{display:flex;flex-wrap:wrap;gap:16px 25px;align-items:end;padding:16px 18px;margin:14px 0 18px}.control{display:flex;flex-direction:column;gap:4px}.control label{font-size:11px;font-weight:750;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}select{font:inherit;color:var(--ink);background:#fff;border:1px solid #cbd7db;border-radius:8px;padding:8px 30px 8px 10px;min-width:105px}.filter-wrap{display:flex;flex-direction:column;gap:5px}.filter-title{font-size:11px;font-weight:750;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}.filters{display:flex;flex-wrap:wrap;gap:6px}.filter{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;padding:5px 8px;border-radius:99px;font-size:12px;cursor:pointer}.filter input{accent-color:var(--teal);margin:0}.scope-note{margin-left:auto;max-width:310px;color:var(--muted);font-size:12px}.error{display:none;color:#9b382e;background:#fff3ef;border:1px solid #efc6ba;padding:9px 12px;border-radius:9px;font-size:13px;margin:-6px 0 14px}.error.show{display:block}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.panel{padding:20px;min-width:0}.panel-head{display:flex;align-items:start;justify-content:space-between;gap:12px;margin-bottom:13px}.panel h3{font-size:16px;margin:0;letter-spacing:-.02em}.sub{font-size:12px;color:var(--muted);margin:3px 0 0}.chart{width:100%;height:auto;display:block;overflow:visible}.legend{display:flex;flex-wrap:wrap;gap:7px 14px;margin:11px 0 0}.legend-item{display:inline-flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}.dot{width:9px;height:9px;border-radius:3px}.chart-note{font-size:11px;color:var(--muted);margin:10px 0 0}.dual{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini-chart{min-width:0}.mini-title{font-size:11px;font-weight:700;color:var(--muted);margin:0 0 5px}.table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:12px;min-width:800px}th,td{padding:10px 9px;border-bottom:1px solid #e7edef;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}th{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;background:#f7f9f9}td:first-child,th:first-child{text-align:left;position:sticky;left:0;background:inherit}tbody tr:hover{background:#f6faf9}td.name{font-weight:700;text-align:left}.explain{padding:14px 16px;background:#edf6f3;border-radius:10px;color:#315a57;font-size:13px;margin:14px 0 0}.about{padding:22px;margin-top:34px}.about h2{font-size:19px;margin:0 0 9px}.about p{color:#536771;font-size:13px;margin:7px 0}.about strong{color:var(--ink)}.about a{color:#176c70}footer{padding:18px 4px 0;font-size:13px;font-weight:750;color:var(--navy)}.footnote{font-size:11px;color:var(--muted);margin-top:5px}.empty{font-size:13px;color:var(--muted);padding:15px 0}
+@media(max-width:850px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid{grid-template-columns:1fr}.scope-note{margin-left:0;flex-basis:100%;max-width:none}}@media(max-width:520px){main{padding-top:12px}header{border-radius:17px;padding:24px 20px}.topline{align-items:flex-start;flex-direction:column}.kpis{gap:9px}.kpi{padding:15px 13px;min-height:125px}.kpi-value{font-size:29px}.panel{padding:15px}.dual{grid-template-columns:1fr}.controls{gap:12px}.section-head{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <div class="topline"><p class="eyebrow">Energy transition · research monitor</p><span class="badge">US · utility-scale · GWh</span></div>
+ <h1 id="title"></h1>
+ <p class="question" id="question"></p>
+ <p class="answer" id="headline"></p>
+ <p class="date-note" id="date"></p>
+</header>
+<section aria-labelledby="kpi-title">
+ <div class="section-head"><div><h2 id="kpi-title">Latest rolling 12 months</h2><p>Latest observation window; independent of the historical year selectors.</p></div></div>
+ <div id="metrics" class="kpis"></div>
+</section>
+<section aria-labelledby="compare-title">
+ <div class="section-head"><div><h2 id="compare-title">Explore the historical record</h2><p>Compare complete calendar years and focus the technology views.</p></div></div>
+ <div class="controls card">
+  <div class="control"><label for="year-a">Year A · start</label><select id="year-a" aria-label="Year A"></select></div>
+  <div class="control"><label for="year-b">Year B · end</label><select id="year-b" aria-label="Year B"></select></div>
+  <div class="filter-wrap"><span class="filter-title">Visible technologies</span><div class="filters" id="filters"></div></div>
+  <div class="scope-note">Visibility filters affect display only. Every share uses total utility-scale generation as its denominator.</div>
+ </div>
+ <p id="selection-error" class="error" role="alert"></p>
+ <div class="grid">
+  <section class="panel card"><div class="panel-head"><div><h3>Calendar-year generation mix</h3><p class="sub">100% stacked · complete years only</p></div></div><div id="mix-chart"></div><p class="chart-note">“Other” is the residual after solar, wind, natural gas and coal.</p></section>
+  <section class="panel card"><div class="panel-head"><div><h3>Rolling-12 share trends</h3><p class="sub">Share of total generation · starts when 12 months are available</p></div></div><div id="trend-chart"></div></section>
+  <section class="panel card"><div class="panel-head"><div><h3>Annual generation growth</h3><p class="sub">Percent and absolute GWh change are shown together.</p></div></div><div id="growth-chart"></div></section>
+  <section class="panel card"><div class="panel-head"><div><h3>Year A vs Year B comparison</h3><p class="sub">Shares use each year's total generation; growth spans the selected period.</p></div></div><div class="table-wrap" id="comparison-table"></div><p id="comparison-explanation" class="explain"></p></section>
+ </div>
+</section>
+<section id="lab-about" class="about card">
+ <h2>About this dashboard</h2>
+ <p><strong>Purpose.</strong> This research monitor shows how solar and wind generation shares have changed relative to natural gas and coal. It supports research prioritisation; it does not assess securities or recommend investments.</p>
+ <p><strong>Prototype status.</strong> This is a working prototype; the group's manual independent validation is pending.</p>
+ <p><strong>Source and scope.</strong> U.S. Energy Information Administration (EIA), approved cleaned utility-scale generation input; monthly observations from January 2016 through July 2026, in GWh. The 2026 observations are partial and preliminary. “Other” is a residual, not a separately observed technology. Small rooftop solar is outside this utility-scale dataset.</p>
+ <p><strong>Rebuild saved data.</strong> From the project folder, run <code>python3 calculations/build_dashboard_data.py</code>; the script reads only the two existing calculation reference CSVs and writes <code>data.js</code>.</p>
+ <p><strong>Method.</strong> Shares divide source generation by total generation. Rolling-12 shares sum each source over 12 months and divide by the same 12-month total; annual shares use complete calendar years. Share differences are percentage points. Growth is shown as percent and absolute GWh change. The technology filter never changes the total-generation denominator.</p>
+ <p><strong>Limitations.</strong> Generation is not capacity, revenue, profit, valuation or investment return. Weather, demand and the total-generation denominator affect shares. EIA observations can be revised. Member 1 noted that 2025 values differ from another EIA table and the difference is unexplained; this prototype consistently uses the approved input, so 2025 and 2026-vs-2025 growth are more uncertain.</p>
+ <p><strong>Prototype metadata.</strong> Dashboard ID <code>dev-g00-energy-transition</code> is temporary. Replace it with the instructor's final class prefix and group ID before submission, in both this page's metadata and the generated data.</p>
+</section>
+<footer>Educational project. Not investment advice.</footer>
+</main>
+<script src="data.js"></script>
+<script>
+/* REQUIRED loader: hosted data first, then data.js. Do not change. */
+async function loadDashboardData() {
+  const id = document.querySelector('meta[name="lab:dashboard"]').content;
+  if (location.protocol.startsWith('http')) {
+    try {
+      const r = await fetch('/data/' + id + '/data.json', { cache: 'no-cache' });
+      if (r.ok && (r.headers.get('content-type') || '').includes('json')) {
+        const candidate = await r.json();
+        if (candidate && candidate.summary && candidate.data && candidate.summary.dashboard === id) return candidate;
+      }
+    } catch (e) {}
+  }
+  return window.DASHBOARD_DATA;
+}
+loadDashboardData().then(function (d) {
+  if (!d || !d.summary || !d.data) throw new Error("Dashboard data missing or invalid");
+  render(d.summary, d.data);
+}).catch(function (e) {
+  const message = document.createElement("p");
+  message.textContent = "Unable to load dashboard data. Check data.js. " + e.message;
+  document.body.appendChild(message);
+});
+
+function render(summary, data) {
+ const annual=data.annual, monthly=data.monthly, years=annual.years, techs=data.technologies;
+ const byId=id=>document.getElementById(id), colors=Object.fromEntries(techs.map(t=>[t.id,t.color]));
+ const fmt=(v,d=2)=>v===null||v===undefined?'—':Number(v).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
+ const signed=(v,d=2)=>v===null||v===undefined?'—':(v>0?'+':'')+fmt(v,d);
+ byId('title').textContent=summary.title;byId('question').textContent=summary.question;byId('headline').textContent=summary.headline;
+ const last=monthly.dates[monthly.dates.length-1];byId('date').textContent='Latest observation: '+last+' · partial/preliminary (2026)';
+ const metrics=byId('metrics');metrics.replaceChildren();
+ summary.key_numbers.forEach(n=>{const el=document.createElement('article');el.className='kpi';const label=document.createElement('div');label.className='kpi-label';label.textContent=n.label;const value=document.createElement('div');value.className='kpi-value';value.textContent=n.value===null?'—':(n.id==='solar_wind_share_change_r12_pp'?signed(n.value,2):fmt(n.value,2));const unit=document.createElement('div');unit.className='kpi-unit';unit.textContent=n.unit;el.append(label,value,unit);metrics.append(el);});
+ const yearA=byId('year-a'),yearB=byId('year-b');
+ for(const y of years){for(const sel of [yearA,yearB]){const o=document.createElement('option');o.value=y;o.textContent=String(y);sel.append(o);}}
+ yearA.value='2016';yearB.value='2025';
+ const filters=byId('filters'),checks={};for(const t of techs){const lab=document.createElement('label');lab.className='filter';const cb=document.createElement('input');cb.type='checkbox';cb.checked=true;cb.value=t.id;checks[t.id]=cb;cb.addEventListener('change',update);lab.append(cb,document.createTextNode(t.label));filters.append(lab);}
+ yearA.addEventListener('change',update);yearB.addEventListener('change',update);
+ const visible=id=>Boolean(checks[id]&&checks[id].checked);
+ function update(){
+  const a=Number(yearA.value),b=Number(yearB.value),err=byId('selection-error');
+  if(!years.includes(a)||!years.includes(b)||b<=a){err.textContent='Choose two available complete years, with Year B later than Year A.';err.classList.add('show');byId('comparison-table').replaceChildren();byId('comparison-explanation').textContent='A valid later comparison year is required.';drawMix();drawTrend();drawGrowth();return;}
+  err.classList.remove('show');drawMix(a,b);drawTrend();drawGrowth();drawTable(a,b);
+ }
+ const NS='http://www.w3.org/2000/svg';
+ function makeSvg(w,h,label){const s=document.createElementNS(NS,'svg');s.setAttribute('class','chart');s.setAttribute('viewBox','0 0 '+w+' '+h);s.setAttribute('role','img');s.setAttribute('aria-label',label);return s;}
+ function shape(svg,tag,attrs,text){const e=document.createElementNS(NS,tag);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(text!==undefined)e.textContent=String(text);svg.append(e);return e;}
+ function drawMix(a=Number(yearA.value),b=Number(yearB.value)){
+  const host=byId('mix-chart');host.replaceChildren();const rows=years.map((y,i)=>({y,i}));const w=600,h=235,left=45,right=12,top=10,bottom=29,plotW=w-left-right,plotH=h-top-bottom;
+  const s=makeSvg(w,h,'100 percent stacked annual generation mix');[0,25,50,75,100].forEach(v=>{const y=top+plotH*(1-v/100);shape(s,'line',{x1:left,x2:w-right,y1:y,y2:y,stroke:'#e5ecee'});shape(s,'text',{x:left-7,y:y+4,'text-anchor':'end','font-size':10,fill:'#71838b'},v+'%');});
+  const cats=['solar','wind','gas','coal','other'];const bw=Math.min(34,plotW/rows.length*.58),step=plotW/rows.length;
+  rows.forEach(({y,i},j)=>{let acc=0;cats.forEach(id=>{const v=annual.series[id+'_share_pct'][i];if(v!==null){const yy=top+plotH*(1-(acc+v)/100),hh=plotH*v/100;if(visible(id)){const rect=shape(s,'rect',{x:left+j*step+(step-bw)/2,y:yy,width:bw,height:hh,fill:colors[id],stroke:(y===a||y===b)?'#14374a':'none','stroke-width':(y===a||y===b)?1.3:0});shape(rect,'title',{},y+' · '+id+': '+fmt(v,2)+'%');}acc+=v;}});shape(s,'text',{x:left+j*step+step/2,y:h-7,'text-anchor':'middle','font-size':10,fill:'#60727d','font-weight':(y===a||y===b)?700:400},y);});
+  host.append(s,makeLegend(cats));
+ }
+ function makeLegend(ids){const d=document.createElement('div');d.className='legend';for(const id of ids){const item=document.createElement('span');item.className='legend-item';const dot=document.createElement('i');dot.className='dot';dot.style.background=colors[id];item.append(dot,document.createTextNode(techs.find(t=>t.id===id).label));d.append(item);}return d;}
+ function drawTrend(){
+  const host=byId('trend-chart');host.replaceChildren();const chosen=techs.map(t=>t.id).filter(visible),w=600,h=235,L=44,R=12,T=12,B=30,pw=w-L-R,ph=h-T-B;
+  const s=makeSvg(w,h,'Rolling 12 month generation shares over time');[0,10,20,30,40,50].forEach(v=>{const y=T+ph*(1-v/50);shape(s,'line',{x1:L,x2:w-R,y1:y,y2:y,stroke:'#e5ecee'});shape(s,'text',{x:L-7,y:y+4,'text-anchor':'end','font-size':10,fill:'#71838b'},v+'%');});
+  chosen.forEach(id=>{const vals=monthly.series[id+'_share_r12_pct'];let seg=[];const flush=()=>{if(seg.length>1)shape(s,'polyline',{fill:'none',stroke:colors[id],'stroke-width':2.5,'stroke-linejoin':'round','stroke-linecap':'round',points:seg.map(p=>p.join(',')).join(' ')});seg=[];};vals.forEach((v,i)=>{if(v!==null)seg.push([L+pw*i/(vals.length-1),T+ph*(1-v/50)]);else flush();});flush();});
+  [0,Math.floor((monthly.dates.length-1)/2),monthly.dates.length-1].forEach(i=>{shape(s,'text',{x:L+pw*i/(monthly.dates.length-1),y:h-7,'text-anchor':i===0?'start':i===monthly.dates.length-1?'end':'middle','font-size':10,fill:'#60727d'},monthly.dates[i]);});host.append(s,makeLegend(chosen));
+ }
+ function drawGrowth(){
+  const host=byId('growth-chart');host.replaceChildren();const ids=['solar','wind','gas','coal','other'];const w=560,rowH=22,margin=95,yearsN=annual.years.length-1,h=ids.filter(visible).length*rowH+56;
+  const subset=ids.filter(visible),pcts=[],abs=[];for(const id of subset){for(let i=1;i<annual.years.length;i++){pcts.push(annual.series[id+'_yoy_pct'][i]);abs.push(annual.series[id+'_abs_change_gwh'][i]);}}
+  const maxP=Math.max(80,...pcts.filter(v=>v!==null).map(Math.abs)),maxA=Math.max(...abs.filter(v=>v!==null).map(Math.abs),1),plotW=w-margin-12;
+  const s=makeSvg(w,h,'Annual year over year growth percent and absolute generation change');subset.forEach((id,r)=>{const cy=18+r*rowH;shape(s,'text',{x:0,y:cy+4,'font-size':10,fill:'#586c76'},techs.find(t=>t.id===id).short);for(let i=1;i<annual.years.length;i++){const x=margin+(i-1)*plotW/yearsN,pct=annual.series[id+'_yoy_pct'][i],gwh=annual.series[id+'_abs_change_gwh'][i];if(pct===null||gwh===null)continue;const pw=Math.max(1,Math.abs(pct)/maxP*(plotW/yearsN*.7)),aw=Math.max(1,Math.abs(gwh)/maxA*(plotW/yearsN*.7));const p=shape(s,'rect',{x:x+(pct<0?plotW/yearsN*.35-pw:plotW/yearsN*.35),y:cy-6,width:pw,height:5,rx:2,fill:colors[id],opacity:.95});shape(p,'title',{},id+' '+annual.years[i]+': '+fmt(pct,1)+'%');const g=shape(s,'rect',{x:x+(gwh<0?plotW/yearsN*.35-aw:plotW/yearsN*.35),y:cy+2,width:aw,height:5,rx:2,fill:colors[id],opacity:.38});shape(g,'title',{},id+' '+annual.years[i]+': '+fmt(gwh,0)+' GWh');}});annual.years.slice(1).forEach((y,i)=>shape(s,'text',{x:margin+(i+.5)*plotW/yearsN,y:h-8,'text-anchor':'middle','font-size':9,fill:'#60727d'},y));host.append(s);
+  const leg=document.createElement('div');leg.className='legend';for(const [txt,opacity] of [['Growth %',1],['Absolute GWh',.38]]){const item=document.createElement('span');item.className='legend-item';const d=document.createElement('i');d.className='dot';d.style.background='var(--teal)';d.style.opacity=opacity;item.append(d,document.createTextNode(txt));leg.append(item);}host.append(leg);
+ }
+ function drawTable(a,b){
+  const ia=years.indexOf(a),ib=years.indexOf(b),ids=['solar','wind','solar_wind','gas','coal','other','total'];const rows=ids.filter(id=>id==='total'||(id==='solar_wind'?(visible('solar')||visible('wind')):visible(id)));
+  const table=document.createElement('table'),thead=table.createTHead(),hr=thead.insertRow();['Technology','Share '+a,'Share '+b,'Share change (pp)','Generation difference (GWh)','Selected-period growth (%)'].forEach(x=>{const th=document.createElement('th');th.textContent=x;hr.append(th);});const body=table.createTBody();
+  rows.forEach(id=>{const tr=body.insertRow(),td=tr.insertCell();td.className='name';td.textContent=id==='total'?'Total generation':techs.find(t=>t.id===id).label;const av=id==='total'?100:annual.series[id+'_share_pct'][ia],bv=id==='total'?100:annual.series[id+'_share_pct'][ib],gv=annual.series[id+'_gwh'][ib]-annual.series[id+'_gwh'][ia],growth=annual.series[id+'_gwh'][ia]===0?null:(annual.series[id+'_gwh'][ib]/annual.series[id+'_gwh'][ia]-1)*100;[fmt(av,2)+'%',fmt(bv,2)+'%',signed(bv-av,2),signed(gv,1),signed(growth,1)+'%'].forEach(v=>tr.insertCell().textContent=v);});
+  byId('comparison-table').replaceChildren(table);const sw=annual.series.solar_wind_share_pct[ib]-annual.series.solar_wind_share_pct[ia],coal=annual.series.coal_share_pct[ib]-annual.series.coal_share_pct[ia];byId('comparison-explanation').textContent='From '+a+' to '+b+', solar + wind changed by '+signed(sw,2)+' percentage points of total generation; coal changed by '+signed(coal,2)+' percentage points. These shifts describe generation mix and do not identify causes or investment returns.';
+ }
+ update();
+}
+</script>
+</body>
+</html>
